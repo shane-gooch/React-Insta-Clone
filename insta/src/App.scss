@@ -12,7 +12,8 @@ body {
 }
 
 .SearchBar {
-    display: flex; 
+    display: flex;
+    justify-content: space-evenly; 
 
     .icon-ig {
         height: 30px;

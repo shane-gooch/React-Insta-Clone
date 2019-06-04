@@ -22,7 +22,7 @@ const PostContainer = props => {
 PostContainer.propTypes = {
     dummy: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
+            id: PropTypes.string,
             username: PropTypes.string.isRequired,
             imageURL: PropTypes.string.isRequired,
             likes: PropTypes.number,
