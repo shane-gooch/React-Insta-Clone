@@ -25,14 +25,14 @@ PostContainer.propTypes = {
             id: PropTypes.string.isRequired,
             username: PropTypes.string.isRequired,
             imageURL: PropTypes.string.isRequired,
-            likes: PropTypes.number.isRequired,
+            likes: PropTypes.number,
             comments: PropTypes.arrayOf(
                 PropTypes.shape({
                     id: PropTypes.number,
                     username: PropTypes.string,
                     text: PropTypes.string
                 })
-            ).isRequired
+            )
         })
     )
 }

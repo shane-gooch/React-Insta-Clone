@@ -4,7 +4,7 @@ import './App.scss';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 // import AddComment from './components/CommentSection/AddComment';
-// import SearchBar from './components/SearchBar/SearchBar';
+import SearchBar from './components/SearchBar/SearchBar';
 
 class App extends React.Component {
   state = {
@@ -14,7 +14,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        {/* <SearchBar />  */}
+        <SearchBar /> 
         <PostContainer dummy={this.state.dummy}/> 
         {/* <AddComment /> */}
       </div>

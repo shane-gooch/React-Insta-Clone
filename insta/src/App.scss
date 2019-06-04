@@ -7,20 +7,36 @@ body {
 .App{
     max-width: 950px; 
     display: flex;
-    justify-content: center; 
+    flex-direction: column; 
+    align-items: center; 
 }
 
+.SearchBar {
+    display: flex; 
+
+    .icon-ig {
+        height: 30px;
+        width: 28px; 
+    }
+
+    .icon-insta{
+        height: 30px;
+        width: 115px; 
+    }
+}
 
 .PostContainer {
     display: flex;
     flex-direction: column;
     align-items: center; 
     width: 70%; 
-    margin-bottom: 50px; 
+    margin-bottom: 80px; 
     border: 1px solid #E8E8E8; 
 
     .Post {
         width: 100%;
+        display: flex;
+        flex-direction: column;
 
         .thumbnail-username{
             display: flex; 
@@ -36,21 +52,32 @@ body {
         }
         
         .PxPush {
-            margin: 5px 10px 10px 10px;
+            margin: 5px 10px 5px 10px;
         }
 
         img{
             width: 100%; 
+        }
+        
+        .iconContainer{
+            display: flex;
+            align-items: center; 
+            margin: 5px 10px 5px 10px;
+            
+            .icon{
+                width: 25px;
+                height: 25px;  
+                margin-right: 10px; 
+            }
         }
 
     }
 
     .CommentContainer{
         width: 100%;
-        padding: 5px; 
 
         p{
-            margin: 5px 5px 10px 10px;  
+            margin: 5px 5px 5px 10px;  
         }
          
     }

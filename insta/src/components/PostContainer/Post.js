@@ -9,6 +9,10 @@ const Post = props => {
                 <strong>{props.posts.username}</strong>
             </div>
             <img src={props.posts.imageUrl} alt="" />
+            <div className='iconContainer'>
+                <img className='icon' src='./assets/heart-icon.png' alt='' />
+                <img className='icon' src='./assets/comment-icon.png' alt='' />
+            </div>
             <strong className='PxPush'>{props.posts.likes} likes</strong>
         </div>)
 }
