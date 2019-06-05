@@ -5,14 +5,17 @@ import CommentForm from './CommentForm';
 class CommentContainer extends React.Component {
     constructor(props){
         super(props)
-        console.log(props)
+
         this.state = {
-            comments: props.comments,
+            comments: props.comments.map(comment => {
+                return comment
+            }),
             commentInput: ''
         }  
     } 
 
-    changeHanlder = e => {
+    changeHandler = e => {
+        console.log(e)
         e.preventDefault();
         this.setState({
             commentInput: e.target.value
@@ -22,8 +25,8 @@ class CommentContainer extends React.Component {
     addComment = e => {
         e.preventDefault();
         const newComment = {
-            username: this.state.username,
-            text: this.state.text
+            username: 'shane',
+            text: this.state.commentInput
         }
         this.setState({
             comments: [...this.state.comments, newComment],
@@ -37,7 +40,7 @@ class CommentContainer extends React.Component {
                 <Comment key={this.state.id} comments={this.state.comments}/>
                 <CommentForm 
                 commentInput={this.state.commentInput}
-                changeHanlder={this.changeHanlder}
+                changeHandler={this.changeHandler}
                 addComment={this.addComment}
                 />
             </div>
