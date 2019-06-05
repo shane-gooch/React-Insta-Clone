@@ -16,19 +16,12 @@ class App extends React.Component {
       dummy: dummyData
     }); 
   }
-
-  changeHanlder = e => {
-    e.preventDefault();
-      this.setState({
-        commentInput: e.target.value
-      })
-  }
   
   render(){
     return (
       <div className="App">
         <SearchBar /> 
-        <PostContainer dummy={this.state.dummy}/> 
+        <PostContainer dummy={this.state.dummy} /> 
       </div>
     );
   }

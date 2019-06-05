@@ -4,6 +4,7 @@ import CommentContainer from '../CommentSection/CommentContainer';
 import PropTypes from 'prop-types'; 
 
 
+
 const PostContainer = props => {
   
     return(
@@ -22,7 +23,7 @@ const PostContainer = props => {
 PostContainer.propTypes = {
     dummy: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string,
+            id: PropTypes.string.isRequired,
             username: PropTypes.string.isRequired,
             imageURL: PropTypes.string.isRequired,
             likes: PropTypes.number,

@@ -13,7 +13,6 @@ class CommentContainer extends React.Component {
     } 
 
     changeHandler = e => {
-        console.log(e)
         e.preventDefault();
         this.setState({
             commentInput: e.target.value
@@ -31,6 +30,7 @@ class CommentContainer extends React.Component {
             commentInput: ''
         })
     }
+    
 
     render() {
         return(
