@@ -5,7 +5,6 @@ const Login = () => {
         localStorage.setItem(e.target.name, e.target.value); 
     }
     const onSubmit = e => {
-       
         e.preventDefault();
         if(localStorage.getItem('username') && (localStorage.getItem('password'))){
             localStorage.setItem('loggedIn', 'true')

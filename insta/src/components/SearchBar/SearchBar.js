@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchForm from './SearchForm';
+import LogOut from '../Login/Logout';
 
 class SearchBar extends React.Component {
     state = {
@@ -10,6 +11,15 @@ class SearchBar extends React.Component {
         this.setState({
             searchInput: e.target.value
         });
+    }
+
+    onClick = () => {
+        if(localStorage.getItem('username') && (localStorage.getItem('password'))){
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            localStorage.removeItem('loggedIn')
+        }
+        window.location.reload();
     }
 
     render() {
@@ -29,6 +39,7 @@ class SearchBar extends React.Component {
                     <img src='./assets/heart-icon.png' alt='' />
                     <img src='./assets/person.png' alt='' />
                 </div>
+                <LogOut onClick={this.onClick}/>
             </div>
         )
     }

@@ -1,10 +1,7 @@
 import React from 'react';
 // import PostsPage from './components/PostContainer/PostsPage';
 
-
-
 import './App.scss';
-import Login from './components/Login/Login';
 import withAuthenticate from './components/authentication/withAuthenticate';
 
 

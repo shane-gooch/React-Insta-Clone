@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 class Post extends React.Component {
     constructor(props){
         console.log(props.posts.likes)

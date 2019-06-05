@@ -21,9 +21,9 @@ const withAuthenticate = PostsPage => LoginPage =>
         }
         render(){
             if(this.state.loggedIn) {
-                return <PostsPage />;
+                return <PostsPage />
             } else {
-                return <LoginPage />; 
+                return <LoginPage />
             }
         }
     }
