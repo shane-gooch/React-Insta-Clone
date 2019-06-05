@@ -7,9 +7,7 @@ class CommentContainer extends React.Component {
         super(props)
 
         this.state = {
-            comments: props.comments.map(comment => {
-                return comment
-            }),
+            comments: props.comments,
             commentInput: ''
         }  
     } 
