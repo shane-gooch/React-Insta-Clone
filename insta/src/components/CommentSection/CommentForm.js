@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CommentForm = props => {
-    console.log(props)
     return(
         <form onSubmit={e => props.addComment(e)}>
             <input 

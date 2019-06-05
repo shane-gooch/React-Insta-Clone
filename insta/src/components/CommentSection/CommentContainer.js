@@ -5,7 +5,6 @@ import CommentForm from './CommentForm';
 class CommentContainer extends React.Component {
     constructor(props){
         super(props)
-
         this.state = {
             comments: props.comments,
             commentInput: ''

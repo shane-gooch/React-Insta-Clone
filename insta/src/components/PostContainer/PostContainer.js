@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 
 
 const PostContainer = props => {
-  
     return(
         <div>
             {props.dummy.map(data => {
@@ -37,7 +36,6 @@ PostContainer.propTypes = {
         })
     )
 }
-
 
 
 export default PostContainer; 
