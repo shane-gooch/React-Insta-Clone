@@ -3,12 +3,34 @@ import dummyData from '../../dummy-data';
 import PostContainer from './PostContainer';
 import SearchBar from '../SearchBar/SearchBar';
 import LogOut from '../Login/Logout';
+import styled from 'styled-components';
+import { Button } from '../Button';
 
+const PostsPageDiv = styled.div`
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+   margin-right: 50px; 
+`
+
+const FlexBoxWidth = styled.div`
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    margin-bottom: 50px; 
+`
+
+
+const LogOutButton = styled(Button)`
+    border-color: black
+`
 
 class PostsPage extends React.Component {
     state = {
         dummy: [],
-        search: '',
+        input: ''
     }
 
     componentDidMount() {
@@ -19,7 +41,7 @@ class PostsPage extends React.Component {
 
     changeHandler = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            input: e.target.value 
         })
     }
 
@@ -30,19 +52,17 @@ class PostsPage extends React.Component {
             localStorage.removeItem('loggedIn')
         }
         window.location.reload();
-    }
-
+    } 
 
     render() {
         return(
-            <div className="PostsPage">
-                <SearchBar 
-                changeHandler={this.changeHandler} 
-                posts={this.state.dummy}
-                />
-                <LogOut onClick={this.onClick}/>
-                <PostContainer dummy={this.state.dummy} searchFilter={this.searchFilter} />
-            </div>
+            <PostsPageDiv>
+                <FlexBoxWidth>
+                    <SearchBar changeHandler={this.changeHandler} input={this.state.input} />
+                    <LogOutButton standard onClick={this.onClick}>Log Out</LogOutButton>
+                </FlexBoxWidth>
+                <PostContainer dummy={this.state.dummy}  input={this.state.input} />
+            </PostsPageDiv>
         )
     }
 }

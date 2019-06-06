@@ -4,6 +4,7 @@ import './App.scss';
 import withAuthenticate from './components/authentication/withAuthenticate';
 
 
+
 const NewApp = withAuthenticate
 
 class App extends React.Component {
