@@ -1,9 +1,16 @@
 import React from 'react';
 
+
 const SearchForm = props => {
     return(
-        <div></div>
-    )
+        <form>
+            <input 
+            type='text'
+            name=''
+            placeholder='search'
+            />
+        </form>
+    );
 }
 
 export default SearchForm; 

@@ -2,10 +2,13 @@ import React from 'react';
 import dummyData from '../../dummy-data';
 import PostContainer from './PostContainer';
 import SearchBar from '../SearchBar/SearchBar';
+import LogOut from '../Login/Logout';
+
 
 class PostsPage extends React.Component {
     state = {
-        dummy: []
+        dummy: [],
+        search: '',
     }
 
     componentDidMount() {
@@ -14,11 +17,31 @@ class PostsPage extends React.Component {
         });
     }
 
+    changeHandler = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    onClick = () => {
+        if(localStorage.getItem('username') && (localStorage.getItem('password'))){
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            localStorage.removeItem('loggedIn')
+        }
+        window.location.reload();
+    }
+
+
     render() {
         return(
             <div className="PostsPage">
-                <SearchBar />
-                <PostContainer dummy={this.state.dummy} />
+                <SearchBar 
+                changeHandler={this.changeHandler} 
+                posts={this.state.dummy}
+                />
+                <LogOut onClick={this.onClick}/>
+                <PostContainer dummy={this.state.dummy} searchFilter={this.searchFilter} />
             </div>
         )
     }
