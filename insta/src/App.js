@@ -1,27 +1,17 @@
 import React from 'react';
+// import PostsPage from './components/PostContainer/PostsPage';
 import './App.scss';
+import withAuthenticate from './components/authentication/withAuthenticate';
 
-import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
 
+
+const NewApp = withAuthenticate
 
 class App extends React.Component {
-  state = {
-    dummy: []
-  }
-
-  componentDidMount() {
-    this.setState({
-      dummy: dummyData
-    }); 
-  }
-  
   render(){
     return (
-      <div className="App">
-        <SearchBar /> 
-        <PostContainer dummy={this.state.dummy} /> 
+      <div>
+        <NewApp />
       </div>
     );
   }

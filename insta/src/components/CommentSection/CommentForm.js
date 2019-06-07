@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Form = styled.form`
+    margin: 5px 10px 5px 10px;
+    paddgin: 5px; 
+`
 
 const CommentForm = props => {
-    console.log(props)
     return(
-        <form onSubmit={e => props.addComment(e)}>
+        <Form onSubmit={e => props.addComment(e)}>
             <input 
                 type='text'
                 name='commentInput'
@@ -11,7 +16,7 @@ const CommentForm = props => {
                 value={props.commentInput}
                 onChange={props.changeHandler}
             />
-        </form>
+        </Form>
     )
 }
 

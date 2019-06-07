@@ -1,4 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const PxPush = styled.div`
+ margin: 5px 5px 5px 10px;
+`
+
+const PxPushstrong = styled.strong`
+    margin: 5px 8px 2px 0px; 
+`
 
 const Comment = props => {
    
@@ -6,9 +15,9 @@ const Comment = props => {
         <div>
             {props.comments.map(comment => {
                 return (
-                <div key={comment.id}>
-                    <strong>{comment.username}</strong>{comment.text}
-                </div>)
+                <PxPush key={comment.text}>
+                    <PxPushstrong>{comment.username}</PxPushstrong>{comment.text}
+                </PxPush>)
             })}
         </div>
     )
